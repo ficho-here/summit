@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://byxux1cgc6qtr" path="res://sprites/ledge.png" id="1_cn3sm"]
 
+<<<<<<< HEAD
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_knhen"]
 size = Vector2(66, 10)
 
@@ -20,3 +21,16 @@ shape = SubResource("RectangleShape2D_knhen")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_knhen")
+=======
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qx3l2"]
+size = Vector2(64, 8)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_qx3l2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cn3sm")
+>>>>>>> c033735 (Added basic movement with "A" and "D" also added player camera + Vim motions)

@@ -17,3 +17,12 @@ shape = SubResource("RectangleShape2D_g2els")
 texture = ExtResource("1_3vyb7")
 hframes = 2
 frame = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="MoveTimer" type="Timer" parent="."]
+wait_time = 0.962
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]

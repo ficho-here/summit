@@ -1,16 +1,9 @@
 extends Area2D
 
-
-
-
-
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "player":
-		body.teleport_to_ledge(global_position)
+		body.teleport_to_ledge(self)

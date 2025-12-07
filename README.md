@@ -1,55 +1,5 @@
-VIM bindings for Godot 4
+# *SUMMIT*
 
-recently improved thanks to wenqiangwang
-If you would like ctrl+F to be move-forward by page then uncomment the following line
+*In the year 2050 global warming became a very big problem and on the date of 25. December. Yeah Christmas every single part of Antarctica melted and everyone was evacuated. There was a kid that was a boy scout he was on let's say a solo mission in the wood to catch a deer. While everyone was being evacuated to bunkers he was siting there patiently waiting for the perfect time to strike a deer. Then he noticed water rising QUICKLY! He decided to sprint to the mountain near by and here we are climbing the mountain.*
 
-#"Ctrl+F": 1, ## Uncomment if you want Ctrl+F for move forward by page
-
-### Supported Mode
-
-    - Normal mode
-    - Insert mode
-    - Visual mode
-    - Visual line mode
-
-### Supported motions
-
-    h, l, j, k, +, -
-    ^, 0, $, |
-    H, L, M,
-    c-f, c-b, c-d, c-u,
-    G, gg
-    w, W, e, E, b, ge
-    %, f, F, t, T, ;
-    *, #, /, n, N
-    aw, a(, a{, a[, a", a'
-    iw, i(, i{, i[, i", i'
-
-### Supported operator
-
-    c, C,
-    d, D, x, X,
-    y, Y,
-    u, U, ~
-
-### Supported actions
-
-    p,
-    u, c-r,
-    c-o, c-i,
-    za, zM, zR,
-    q, @, .,
-    >, <
-    m, '
-
-### Override Default Godot Shortcuts with `godot-vim`'s ones
-
-Note that all non-ascii character mappings that are already mapped in the default Godot editor have to be unmapped from the Editor settings (Editor >> Editor Settings >> Shorcuts) before being usable with `godot-vim`.
-
-This currently goes for:
-
-- `Ctrl+R`
-- `Ctrl+U`
-- `Ctrl+D`
-
-See the full list of non-ascii shortucts that may already be mapped by Godot and thus wouldn't work in `godot-vim` before releasing them in Godot settings: https://github.com/joshnajera/godot-vim/blob/main/addons/godot-vim/godot-vim.gd#L135
+- You play as the boy scout climbing the mountain to escape the water

@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var speed = 1000
 @export var can_jump = true
 var is_hanging = true
+var first_jump = false
 var current_ledge: Area2D = null
 var jump_count = 0
 @onready var main_node = get_parent() 
@@ -15,6 +16,7 @@ func get_input():
 		
 		
 	if Input.is_action_just_pressed("right") and main_node.ledge_direction[jump_count] == "R":
+		first_jump = true
 		jump_count += 1
 		velocity.y = -speed 
 		velocity.x = speed
@@ -48,6 +50,10 @@ func teleport_to_ledge(ledge: Area2D):
 	is_hanging = true
 	global_position = ledge.global_position
 	velocity = Vector2.ZERO
+	
+func get_first_jump():
+	return first_jump
+	
 	
 	
 	

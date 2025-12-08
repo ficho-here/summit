@@ -3,6 +3,8 @@ extends Node2D
 
 @onready var ledge = $map1/Area2D 
 @onready var map1 = $map1 
+@onready var water = $Water
+@onready var player = $player
 var ledge_direction: Array[String] = ["R", "L"]
 
 func _ready() -> void:
@@ -14,6 +16,9 @@ func _ready() -> void:
 	
 	print(ledge_direction)
 
+func _process(delta: float) -> void:
+	if player.get_first_jump() == true:
+		water.position.y -= 2
 
 func create_ledge(xp: float, yp: float, count: int):
 	

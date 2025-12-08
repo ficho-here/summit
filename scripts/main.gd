@@ -1,19 +1,20 @@
 extends Node2D
 
 
-@onready var ledge = $map1/Area2D 
-@onready var map1 = $map1 
+@onready var ledge = $map1/Area2D
+@onready var map1 = $map1
 @onready var water = $Water
 @onready var player = $player
+@export var count_ledges = 100
 var ledge_direction: Array[String] = ["R", "L"]
 
 func _ready() -> void:
-	
+
 	var first_ledge = ledge.duplicate()
-	first_ledge.global_position = Vector2(0, -200)
+	first_ledge.global_position = Vector2(0, -205)
 	map1.add_child(first_ledge)
-	create_ledge(0, -200, 100)
-	
+	create_ledge(0, -205, count_ledges-2)
+
 	print(ledge_direction)
 
 func _process(delta: float) -> void:
@@ -21,26 +22,21 @@ func _process(delta: float) -> void:
 		water.position.y -= 2
 
 func create_ledge(xp: float, yp: float, count: int):
-	
+
 	var randpos = randi_range(1, 2)
 	if count == 0:
 		return
-	
+
 	var another_ledge = ledge.duplicate()
-	
+
 	if randpos == 1:
 		ledge_direction.append("R")
-		another_ledge.global_position = Vector2(xp+100, yp-100)
+		another_ledge.global_position = Vector2(xp+100, yp-105)
 		map1.add_child(another_ledge)
-		create_ledge(xp+100, yp-100, count-1)
-		
-	elif randpos == 2: 
+		create_ledge(xp+100, yp-105, count-1)
+
+	elif randpos == 2:
 		ledge_direction.append("L")
-		another_ledge.global_position = Vector2(xp-100, yp-100)
+		another_ledge.global_position = Vector2(xp-100, yp-105)
 		map1.add_child(another_ledge)
-		create_ledge(xp-100, yp-100, count-1)
-	
-	
-	
-	
-	
+		create_ledge(xp-100, yp-105, count-1)

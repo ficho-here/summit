@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dk8ui4i4icyj3"]
+[gd_scene load_steps=6 format=3 uid="uid://dk8ui4i4icyj3"]
 
 [ext_resource type="PackedScene" uid="uid://dqedyeuhvvkrp" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://dmnkmv51yrdma" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://chb2x0bwly64h" path="res://scenes/water.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dd2k7nfu0eul2" path="res://scenes/ledge.tscn" id="3_sugp2"]
+[ext_resource type="FontFile" uid="uid://co8k8pdrycqyd" path="res://sprites/fonts/PixelOperator8.ttf" id="5_tbgi4"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_sugp2")
@@ -20,3 +21,10 @@ position = Vector2(100, -100)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(1.7, 1.7)
+
+[node name="Label" type="Label" parent="player/Camera2D"]
+offset_left = 23.0
+offset_top = -53.0
+offset_right = 93.0
+offset_bottom = -30.0
+theme_override_fonts/font = ExtResource("5_tbgi4")

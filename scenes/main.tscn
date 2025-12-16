@@ -20,11 +20,14 @@ position = Vector2(100, -100)
 [node name="player" parent="." instance=ExtResource("1_o5qli")]
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(1.7, 1.7)
+offset = Vector2(0, -70)
+zoom = Vector2(0.4, 0.4)
 
-[node name="Label" type="Label" parent="player/Camera2D"]
-offset_left = 23.0
-offset_top = -53.0
-offset_right = 93.0
-offset_bottom = -30.0
+[node name="ProgressBar" type="ProgressBar" parent="player/Camera2D"]
+offset_left = 383.0
+offset_top = -286.0
+offset_right = 387.0
+offset_bottom = -259.0
 theme_override_fonts/font = ExtResource("5_tbgi4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

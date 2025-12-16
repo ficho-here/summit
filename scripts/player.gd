@@ -7,8 +7,9 @@ var is_hanging = true
 var first_jump = false
 var current_ledge: Area2D = null
 var jump_count = 0
+@onready var bar = $Camera2D/ProgressBar
 @onready var main_node = get_parent()
-@onready var label = $Camera2D/Label
+
 func get_input():
 
 
@@ -19,7 +20,7 @@ func get_input():
 	if Input.is_action_just_pressed("right") and main_node.ledge_direction[jump_count] == "R":
 		first_jump = true
 		jump_count += 1
-		label.text = str(jump_count)
+		
 		velocity.y = -speed
 		velocity.x = speed
 		is_hanging = false
@@ -27,13 +28,14 @@ func get_input():
 
 	elif Input.is_action_just_pressed("left") and main_node.ledge_direction[jump_count] == "L":
 		jump_count += 1
-		label.text = str(jump_count)
+		
 		velocity.y = -speed
 		velocity.x = -speed
 		is_hanging = false
 		trigger_jump()
 
 func _physics_process(delta: float) -> void:
+	bar.value = jump_count
 	if is_hanging == true:
 		get_input()
 	move_and_slide()
@@ -51,8 +53,7 @@ func _on_timer_timeout() -> void:
 
 func teleport_to_ledge(ledge: Area2D):
 	is_hanging = true
-	global_position = ledge.global_position
 	velocity = Vector2.ZERO
-
+	global_position = ledge.global_position
 func get_first_jump():
 	return first_jump

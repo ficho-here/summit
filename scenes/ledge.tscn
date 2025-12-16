@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://yfqhme5xrjlm" path="res://scripts/ledge.gd" id="1_knhen"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_knhen"]
-size = Vector2(64, 9)
+size = Vector2(14, 9)
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_knhen")

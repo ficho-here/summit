@@ -9,18 +9,24 @@ var current_ledge: Area2D = null
 var jump_count = 0
 @onready var bar = $Camera2D/ProgressBar
 @onready var main_node = get_parent()
-
+@onready var end_label = $Camera2D/Label
+@onready var keys_label = $Camera2D/Label2
 func get_input():
 
 
 	if jump_count < 0 or jump_count >= main_node.ledge_direction.size():
-		return
+		end_label.visible = true
+		keys_label.visible = true
+		get_tree().paused = true
+		if Input.is_action_just_pressed("Restart"):
+			get_tree().reload_current_scene()
+		
+		
 
 
 	if Input.is_action_just_pressed("right") and main_node.ledge_direction[jump_count] == "R":
 		first_jump = true
 		jump_count += 1
-		
 		velocity.y = -speed
 		velocity.x = speed
 		is_hanging = false
@@ -28,7 +34,6 @@ func get_input():
 
 	elif Input.is_action_just_pressed("left") and main_node.ledge_direction[jump_count] == "L":
 		jump_count += 1
-		
 		velocity.y = -speed
 		velocity.x = -speed
 		is_hanging = false

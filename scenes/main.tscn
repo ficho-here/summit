@@ -30,4 +30,22 @@ offset_right = 387.0
 offset_bottom = -259.0
 theme_override_fonts/font = ExtResource("5_tbgi4")
 
+[node name="Label" type="Label" parent="player/Camera2D"]
+visible = false
+offset_left = -220.0
+offset_top = -203.0
+offset_right = 220.0
+offset_bottom = -180.0
+theme_override_fonts/font = ExtResource("5_tbgi4")
+text = "You escaped the global warming bro"
+
+[node name="Label2" type="Label" parent="player/Camera2D"]
+visible = false
+offset_left = -390.0
+offset_top = -282.0
+offset_right = -350.0
+offset_bottom = -259.0
+text = "SPACE - Restart
+ESC      - Menu"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

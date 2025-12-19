@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @onready var ledge = $map1/Area2D
 @onready var map1 = $map1
 @onready var water = $Water
@@ -8,7 +7,7 @@ extends Node2D
 @export var count_ledges = 100
 @onready var bar = $player/Camera2D/ProgressBar
 var ledge_direction: Array[String] = ["R", "L"]
-
+var water_moving = true
 func _ready() -> void:
 
 	bar.max_value = count_ledges
@@ -20,7 +19,7 @@ func _ready() -> void:
 	print(ledge_direction)
 
 func _process(delta: float) -> void:
-	if player.get_first_jump() == true:
+	if player.get_first_jump() == true and water_moving == true:
 		water.position.y -= 2
 
 func create_ledge(xp: float, yp: float, count: int):
@@ -42,3 +41,8 @@ func create_ledge(xp: float, yp: float, count: int):
 		another_ledge.global_position = Vector2(xp-100, yp-106)
 		map1.add_child(another_ledge)
 		create_ledge(xp-100, yp-106, count-1)
+		
+		
+func disable_water():
+	water_moving = false
+	

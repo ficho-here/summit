@@ -17,14 +17,14 @@ func get_input():
 	if jump_count < 0 or jump_count >= main_node.ledge_direction.size():
 		end_label.visible = true
 		keys_label.visible = true
-		get_tree().paused = true
+		main_node.disable_water()
 		if Input.is_action_just_pressed("Restart"):
 			get_tree().reload_current_scene()
 		
 		
 
 
-	if Input.is_action_just_pressed("right") and main_node.ledge_direction[jump_count] == "R":
+	if Input.is_action_just_pressed("right") and main_node.ledge_direction[jump_count] == "R" and jump_count < 100:
 		first_jump = true
 		jump_count += 1
 		velocity.y = -speed
@@ -32,7 +32,7 @@ func get_input():
 		is_hanging = false
 		trigger_jump()
 
-	elif Input.is_action_just_pressed("left") and main_node.ledge_direction[jump_count] == "L":
+	elif Input.is_action_just_pressed("left") and main_node.ledge_direction[jump_count] == "L" and jump_count < 100:
 		jump_count += 1
 		velocity.y = -speed
 		velocity.x = -speed
